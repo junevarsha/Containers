@@ -4,7 +4,7 @@
 
 Honestly, there's no single concept of a "container": it's just using a 3 diff. kernal features of Linux together culminate to form Containers.
 
-### Why do we need Containers?
+### Why do we need containers?
 
 Bare metal: 
    - you control your destiny - not scalable, expensive - capacity - more secure - DELL, EMC, Hardware Providers - few advantages, lot of downsides.
