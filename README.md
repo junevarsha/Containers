@@ -24,3 +24,51 @@ Containers give us many of the security and resource-management features of VMs
    - Without the cost of having to run a whole other OS.
    - It instead uses chroot, namespace, and cgroup to separate a group of processes from each other. 
     
+Container:
+   - chroot
+   - namespace
+   - cgroup
+
+## chroot
+
+We are doing this all in Docker - because macos - not linux based but unix based kernal freeBSD
+
+```
+docker run -it --name docker-host --rm --privileged ubuntu:bionic
+
+cat /etc/issue
+
+mkdir my-new-root
+
+cd my-new-root/
+
+echo "my super secret thing" >> /my-new-root/secret.txt
+
+chroot /my-new-root bash
+> error
+
+cd /
+cp /bin/bash /bin/ls /my-new-root/bin/
+
+chroot /my-new-root bash
+> error
+
+Add Libraries
+
+ldd /bin/bash
+
+mkdir  /my-new-root/lib{,64}
+
+cp /lib/x86_64-linux-gnu/libtinfo.so.5 /lib/x86_64-linux-gnu/libdl.so.2 /lib/x86_64-linux-gnu/libc.so.6 /my-new-root/lib
+cp /lib64/ld-linux-x86-64.so.2 /my-new-root/lib64
+
+Repeat for ls
+
+ldd /bin/ls
+cp /lib/x86_64-linux-gnu/libselinux.so.1 /lib/x86_64-linux-gnu/libpcre.so.3 /lib/x86_64-linux-gnu/libpthread.so.0 /my-new-root/lib
+
+chroot /my-new-root bash
+
+```
+
+root has been changed and jailed
