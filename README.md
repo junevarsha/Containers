@@ -13,8 +13,3 @@ Why containers are a relevant topic for any software engineer?
 ```
 git clone https://github.com/btholt/projects-for-complete-intro-to-containers.git
 ```
-
-
-1. [Containers Introduction](https://github.com/junevarsha/Containers/blob/master/Containers.md)
-
-
