@@ -17,3 +17,8 @@ dca0416d5ef9   bridge    bridge    local
 
 - docker build --tag=my-app-with-mongo .
 - docker run -p 3000:3000 --network=app-net --env MONGO_CONNECTION_STRING=mongodb://db:27017 my-app-with-mongo
+
+- docker-compose up --scale web=10
+    - Creates 10 web containers
+    - Load balancer front of it (nginx, traffic) to route
+    - We scaled to 10 different containers
