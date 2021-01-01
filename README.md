@@ -13,3 +13,14 @@ Why containers are a relevant topic for any software engineer?
 ```
 git clone https://github.com/btholt/projects-for-complete-intro-to-containers.git
 ```
+### WrapUp
+
+https://btholt.github.io/complete-intro-to-containers/conclusion
+
+Handcrafted containers, docker networking, oci
+
+Key Takeaways
+    - How to make a shareable developer container
+    - How to use that shareable container with Visual Studio Code
+    - How to get up and going with both development and production containers
+    - How to start a smaller-scale multi container project
